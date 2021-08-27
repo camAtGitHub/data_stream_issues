@@ -1,0 +1,51 @@
+,cam-ds-test,ds-foo,ds-foo1,ds-foo2,ds-foo3,ds-foo4,ds-foo5
+status,FALSE. Double Errors,TRUE: Working,"FALSE. Could not locate
+that index-
+pattern-field 
+(id: created_at)",TRUE: Working,"False: Could not locate
+ that index-
+pattern-field 
+(id: @timestamp)",TRUE: Working,"False: Could not locate
+ that index-
+pattern-field 
+(id: @epoch)"
+template name,cam-ds-test,test-ds-foo,test-ds-foo1,test-ds-foo2,test-ds-foo3,test-ds-foo4,test-ds-foo-5
+tS_index_patterns ,cam-ds-test*,ds-foo,ds-foo1,ds-foo2,ds-foo3,ds-foo4,ds-foo5
+index-patterns (UI),cam-ds-test-2020-09,ds-foo,ds-foo1,ds-foo2,ds-foo3,ds-foo4,ds-foo5
+backing index example,.ds-cam-ds-test-2020-08-000001,.ds-ds-foo-000001,.ds-ds-foo1-000001,.ds-ds-foo2-000001,".ds-ds-foo3-000001""",.ds-ds-foo4-000001,.ds-ds-foo5-000001
+results in discover,-,3,-,3,-,1,
+results in raw search,8,12,2,3,2,1,1
+data_stream,confirmed,confirmed,confirmed,confirmed,confirmed,confirmed,confirmed
+,,,,,,,
+ds_timestamp_field,@timestamp,created_at,created_at,@timestamp,@timestamp,@timestamp,epoch
+,,,,,,,
+(tS) templateSettings:,,,,,,,
+tS_idx_codec,best_compression,best_compression,best_compression,best_compression,-,best_compression,-
+tS_idx_refresh_interval,30s,30s,30s,30s,-,30s,-
+tS_idx_num_of_shards,1,1,1,1,-,1,1
+tS_idx_auto_expand_replicas,0-1,0-1,0-1,0-1,-,0-1,-
+tS_idx_num_of_replicas,0,0,0,0,-,0,0
+tS_idx_format,7,-,-,-,-,-,-
+tS_idx_plugins_ISM_rollover_alias,cam-ds-test-*,-,-,-,-,-,-
+ts_aliases,cam-test,-,-,-,-,-,-
+,,,,,,,
+mappings: (fields),,,,,,,
+dynamic,TRUE,TRUE,TRUE,-,-,TRUE,TRUE
+_source.enabled,TRUE,-,-,-,-,-,-
+timestamp_field_name,@timestamp,@timestamp,@timestamp,-,-,@timestamp,epoch
+timestamp_field_format,date_time,date_time,date_time,-,-,date_time,epoch_second
+timestamp_field_type,date,date,date,-,-,date,date
+mapping_ts_fieldName matches ds_ts_fieldName,TRUE,FALSE,FALSE,No Mapping,No Mapping,TRUE,TRUE
+(mapping) cluster_uuid,keyword,keyword,keyword,-,-,-,-
+(mapping) type,keyword,keyword,keyword,-,-,-,
+(mapping) interval_ms,long,long,long,-,-,,
+(mapping) bytes_out,-,-,-,-,-,long,long
+(mapping) bytes_in,-,-,-,-,-,long,long
+(mapping) host,-,-,-,-,-,"multi: Text (Analyzer: Simple) and Keyword
+","multi: Text (Analyzer: Simple) and Keyword
+"
+(mapping) logsource,-,-,-,-,-,"multi: Text (Analyzer: Simple) and Keyword
+","multi: Text (Analyzer: Simple) and Keyword
+"
+,,,,,,,
+Data in index,,,,,,,

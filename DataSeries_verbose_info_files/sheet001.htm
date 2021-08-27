@@ -1,0 +1,478 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link id=Main-File rel=Main-File href="../DataSeries_verbose_info.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(0);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../DataSeries_verbose_info.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link="#0563C1" vlink="#954F72">
+
+<table border=0 cellpadding=0 cellspacing=0 width=1341 style='border-collapse:
+ collapse;table-layout:fixed;width:1007pt'>
+ <col width=319 style='mso-width-source:userset;mso-width-alt:11666;width:239pt'>
+ <col class=xl65 width=176 style='mso-width-source:userset;mso-width-alt:6436;
+ width:132pt'>
+ <col class=xl65 width=176 style='mso-width-source:userset;mso-width-alt:6436;
+ width:132pt'>
+ <col class=xl65 width=136 style='mso-width-source:userset;mso-width-alt:4973;
+ width:102pt'>
+ <col class=xl65 width=122 style='mso-width-source:userset;mso-width-alt:4461;
+ width:92pt'>
+ <col class=xl65 width=120 style='mso-width-source:userset;mso-width-alt:4388;
+ width:90pt'>
+ <col class=xl65 width=150 style='mso-width-source:userset;mso-width-alt:5485;
+ width:113pt'>
+ <col width=142 style='mso-width-source:userset;mso-width-alt:5193;width:107pt'>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 width=319 style='height:15.0pt;width:239pt'></td>
+  <td class=xl65 width=176 style='width:132pt'>cam-ds-test</td>
+  <td class=xl65 width=176 style='width:132pt'>ds-foo</td>
+  <td class=xl65 width=136 style='width:102pt'>ds-foo1</td>
+  <td class=xl65 width=122 style='width:92pt'>ds-foo2</td>
+  <td class=xl65 width=120 style='width:90pt'>ds-foo3</td>
+  <td class=xl65 width=150 style='width:113pt'>ds-foo4</td>
+  <td class=xl65 width=142 style='width:107pt'>ds-foo5</td>
+ </tr>
+ <tr height=100 style='height:75.0pt'>
+  <td height=100 style='height:75.0pt'>status</td>
+  <td class=xl66>FALSE. Double Errors</td>
+  <td class=xl71>TRUE: Working</td>
+  <td class=xl68 width=136 style='width:102pt'>FALSE. Could not locate<br>
+    that index-<br>
+    pattern-field <br>
+    (id: created_at)</td>
+  <td class=xl70>TRUE: Working</td>
+  <td class=xl69 width=120 style='width:90pt'>False: Could not locate<br>
+    <span style='mso-spacerun:yes'> </span>that index-<br>
+    pattern-field <br>
+    (id: @timestamp)</td>
+  <td class=xl71>TRUE: Working</td>
+  <td class=xl69 width=142 style='width:107pt'>False: Could not locate<br>
+    <span style='mso-spacerun:yes'> </span>that index-<br>
+    pattern-field <br>
+    (id: @epoch)</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>template name</td>
+  <td class=xl65>cam-ds-test</td>
+  <td class=xl65>test-ds-foo</td>
+  <td class=xl65>test-ds-foo1</td>
+  <td class=xl65>test-ds-foo2</td>
+  <td class=xl65>test-ds-foo3</td>
+  <td class=xl65>test-ds-foo4</td>
+  <td class=xl65>test-ds-foo-5</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>tS_index_patterns<span
+  style='mso-spacerun:yes'> </span></td>
+  <td class=xl65>cam-ds-test*</td>
+  <td class=xl65>ds-foo</td>
+  <td class=xl65>ds-foo1</td>
+  <td class=xl65>ds-foo2</td>
+  <td class=xl72>ds-foo3</td>
+  <td class=xl65>ds-foo4</td>
+  <td class=xl65>ds-foo5</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>index-patterns (UI)</td>
+  <td class=xl66>cam-ds-test-2020-09</td>
+  <td class=xl72>ds-foo</td>
+  <td class=xl65>ds-foo1</td>
+  <td class=xl65>ds-foo2</td>
+  <td class=xl72>ds-foo3</td>
+  <td class=xl65>ds-foo4</td>
+  <td class=xl65>ds-foo5</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>backing index example</td>
+  <td class=xl73>.ds-cam-ds-test-2020-08-000001</td>
+  <td class=xl72>.ds-ds-foo-000001</td>
+  <td class=xl65>.ds-ds-foo1-000001</td>
+  <td class=xl65>.ds-ds-foo2-000001</td>
+  <td class=xl72>.ds-ds-foo3-000001<span style='display:none'>&quot;</span></td>
+  <td class=xl65>.ds-ds-foo4-000001</td>
+  <td>.ds-ds-foo5-000001</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>results in discover</td>
+  <td class=xl66>-</td>
+  <td class=xl72>3</td>
+  <td class=xl65>-</td>
+  <td class=xl65>3</td>
+  <td class=xl72>-</td>
+  <td class=xl65>1</td>
+  <td></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>results in raw search</td>
+  <td class=xl72>8</td>
+  <td class=xl72>12</td>
+  <td class=xl65>2</td>
+  <td class=xl65>3</td>
+  <td class=xl72>2</td>
+  <td class=xl65>1</td>
+  <td class=xl65>1</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>data_stream</td>
+  <td class=xl65>confirmed</td>
+  <td class=xl65>confirmed</td>
+  <td class=xl65>confirmed</td>
+  <td class=xl65>confirmed</td>
+  <td class=xl65>confirmed</td>
+  <td class=xl65>confirmed</td>
+  <td class=xl65>confirmed</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>ds_timestamp_field</td>
+  <td class=xl65>@timestamp</td>
+  <td class=xl65>created_at</td>
+  <td class=xl65>created_at</td>
+  <td class=xl65>@timestamp</td>
+  <td class=xl65>@timestamp</td>
+  <td class=xl65>@timestamp</td>
+  <td class=xl65>epoch</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>(tS) templateSettings:</td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>tS_idx_codec</td>
+  <td class=xl65>best_compression</td>
+  <td class=xl65>best_compression</td>
+  <td class=xl65>best_compression</td>
+  <td class=xl65>best_compression</td>
+  <td class=xl65>-</td>
+  <td class=xl65>best_compression</td>
+  <td>-</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>tS_idx_refresh_interval</td>
+  <td class=xl65>30s</td>
+  <td class=xl65>30s</td>
+  <td class=xl65>30s</td>
+  <td class=xl65>30s</td>
+  <td class=xl65>-</td>
+  <td class=xl65>30s</td>
+  <td class=xl65>-</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>tS_idx_num_of_shards</td>
+  <td class=xl65>1</td>
+  <td class=xl65>1</td>
+  <td class=xl65>1</td>
+  <td class=xl65>1</td>
+  <td class=xl65>-</td>
+  <td class=xl65>1</td>
+  <td class=xl65>1</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>tS_idx_auto_expand_replicas</td>
+  <td class=xl65>0-1</td>
+  <td class=xl65>0-1</td>
+  <td class=xl65>0-1</td>
+  <td class=xl65>0-1</td>
+  <td class=xl65>-</td>
+  <td class=xl65>0-1</td>
+  <td class=xl65>-</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>tS_idx_num_of_replicas</td>
+  <td class=xl65>0</td>
+  <td class=xl65>0</td>
+  <td class=xl65>0</td>
+  <td class=xl65>0</td>
+  <td class=xl65>-</td>
+  <td class=xl65>0</td>
+  <td class=xl65>0</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>tS_idx_format</td>
+  <td class=xl65>7</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>tS_idx_plugins_ISM_rollover_alias</td>
+  <td class=xl65>cam-ds-test-*</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>ts_aliases</td>
+  <td class=xl65>cam-test</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>mappings: (fields)</td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>dynamic</td>
+  <td class=xl65>TRUE</td>
+  <td class=xl65>TRUE</td>
+  <td class=xl65>TRUE</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>TRUE</td>
+  <td class=xl65>TRUE</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>_source.enabled</td>
+  <td class=xl65>TRUE</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>timestamp_field_name</td>
+  <td class=xl65>@timestamp</td>
+  <td class=xl65>@timestamp</td>
+  <td class=xl65>@timestamp</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>@timestamp</td>
+  <td class=xl65>epoch</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>timestamp_field_format</td>
+  <td class=xl65>date_time</td>
+  <td class=xl65>date_time</td>
+  <td class=xl65>date_time</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>date_time</td>
+  <td class=xl65>epoch_second</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>timestamp_field_type</td>
+  <td class=xl65>date</td>
+  <td class=xl65>date</td>
+  <td class=xl65>date</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>date</td>
+  <td class=xl65>date</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>mapping_ts_fieldName matches
+  ds_ts_fieldName</td>
+  <td class=xl71>TRUE</td>
+  <td class=xl66>FALSE</td>
+  <td class=xl66>FALSE</td>
+  <td class=xl65>No Mapping</td>
+  <td class=xl65>No Mapping</td>
+  <td class=xl65>TRUE</td>
+  <td class=xl65>TRUE</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>(mapping) cluster_uuid</td>
+  <td class=xl65>keyword</td>
+  <td class=xl65>keyword</td>
+  <td class=xl65>keyword</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>(mapping) type</td>
+  <td class=xl65>keyword</td>
+  <td class=xl65>keyword</td>
+  <td class=xl65>keyword</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>(mapping) interval_ms</td>
+  <td class=xl65>long</td>
+  <td class=xl65>long</td>
+  <td class=xl65>long</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65></td>
+  <td></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>(mapping) bytes_out</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>long</td>
+  <td class=xl65>long</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>(mapping) bytes_in</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>long</td>
+  <td class=xl65>long</td>
+ </tr>
+ <tr height=60 style='height:45.0pt'>
+  <td height=60 style='height:45.0pt'>(mapping) host</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl67 width=150 style='width:113pt'>multi: Text (Analyzer: Simple)
+  and Keyword<br>
+    </td>
+  <td class=xl67 width=142 style='width:107pt'>multi: Text (Analyzer: Simple)
+  and Keyword<br>
+    </td>
+ </tr>
+ <tr height=60 style='height:45.0pt'>
+  <td height=60 style='height:45.0pt'>(mapping) logsource</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl65>-</td>
+  <td class=xl67 width=150 style='width:113pt'>multi: Text (Analyzer: Simple)
+  and Keyword<br>
+    </td>
+  <td class=xl67 width=142 style='width:107pt'>multi: Text (Analyzer: Simple)
+  and Keyword<br>
+    </td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'>Data in index</td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=319 style='width:239pt'></td>
+  <td width=176 style='width:132pt'></td>
+  <td width=176 style='width:132pt'></td>
+  <td width=136 style='width:102pt'></td>
+  <td width=122 style='width:92pt'></td>
+  <td width=120 style='width:90pt'></td>
+  <td width=150 style='width:113pt'></td>
+  <td width=142 style='width:107pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>
