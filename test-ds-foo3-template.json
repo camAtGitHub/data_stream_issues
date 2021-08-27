@@ -1,0 +1,1 @@
+{"index_templates":[{"name":"test-ds-foo3","index_template":{"index_patterns":["ds-foo3"],"data_stream":{"timestamp_field":{"name":"@timestamp"}}}}]}

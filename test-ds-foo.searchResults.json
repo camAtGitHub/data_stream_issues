@@ -1,0 +1,14 @@
+{"took":2,"timed_out":false,"_shards":{"total":1,"successful":1,"skipped":0,"failed":0},"hits":{"total":{"value":3,"relation":"eq"},"max_score":1.0,"hits":[{"_index":".ds-ds-foo-000001","_type":"_doc","_id":"I_affXsBrZmBYUuvyio_","_score":1.0,"_source":{
+  "created_at": "2021-08-23T16:02:15.000Z",
+  "cluster_uuid": "fo3453453422"
+}
+},{"_index":".ds-ds-foo-000001","_type":"_doc","_id":"QPahfXsBrZmBYUuvWio5","_score":1.0,"_source":{
+  "created_at": "2021-08-23T16:02:15.000Z",
+  "cluster_uuid": "fo345345322"
+}
+},{"_index":".ds-ds-foo-000001","_type":"_doc","_id":"VPakfXsBrZmBYUuvIyo8","_score":1.0,"_source":{
+  "created_at": "2021-08-23T16:02:15.000Z",
+  "@timestamp": "2021-08-23T16:02:15.000Z",
+  "cluster_uuid": "fo345345322"
+}
+}]}}
