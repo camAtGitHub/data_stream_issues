@@ -1,1 +1,47 @@
-{"index_templates":[{"name":"test-ds-foo","index_template":{"index_patterns":["ds-foo"],"template":{"settings":{"index":{"codec":"best_compression","refresh_interval":"30s","number_of_shards":"1","auto_expand_replicas":"0-1","number_of_replicas":"0"}},"mappings":{"dynamic":true,"properties":{"interval_ms":{"type":"long"},"@timestamp":{"format":"date_time","type":"date"},"cluster_uuid":{"type":"keyword"},"type":{"type":"keyword"}}}},"composed_of":[],"data_stream":{"timestamp_field":{"name":"created_at"}}}}]}
+{
+  "index_templates": [
+    {
+      "name": "test-ds-foo",
+      "index_template": {
+        "index_patterns": [
+          "ds-foo"
+        ],
+        "template": {
+          "settings": {
+            "index": {
+              "codec": "best_compression",
+              "refresh_interval": "30s",
+              "number_of_shards": "1",
+              "auto_expand_replicas": "0-1",
+              "number_of_replicas": "0"
+            }
+          },
+          "mappings": {
+            "dynamic": true,
+            "properties": {
+              "interval_ms": {
+                "type": "long"
+              },
+              "@timestamp": {
+                "format": "date_time",
+                "type": "date"
+              },
+              "cluster_uuid": {
+                "type": "keyword"
+              },
+              "type": {
+                "type": "keyword"
+              }
+            }
+          }
+        },
+        "composed_of": [],
+        "data_stream": {
+          "timestamp_field": {
+            "name": "created_at"
+          }
+        }
+      }
+    }
+  ]
+}

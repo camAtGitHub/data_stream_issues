@@ -1,41 +1,83 @@
-{"took":0,"timed_out":false,"_shards":{"total":1,"successful":1,"skipped":0,"failed":0},"hits":{"total":{"value":4,"relation":"eq"},"max_score":1.0,"hits":[{"_index":".ds-ds-foo5-000001","_type":"_doc","_id":"2Pnhf3sBrZmBYUuvmJ2M","_score":1.0,"_source":{
-  "epoch": "1629938070",
-  "bytes": "60289587",
-  "bytes_in": "23489587",
-  "bytes_out": "12345687",  
-  "dest_port": "443",
-  "src_port": "80",
-  "host": "server1.acme.com",
-  "logsource": "logfile"
+{
+  "took": 0,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 4,
+      "relation": "eq"
+    },
+    "max_score": 1,
+    "hits": [
+      {
+        "_index": ".ds-ds-foo5-000001",
+        "_type": "_doc",
+        "_id": "2Pnhf3sBrZmBYUuvmJ2M",
+        "_score": 1,
+        "_source": {
+          "epoch": "1629938070",
+          "bytes": "60289587",
+          "bytes_in": "23489587",
+          "bytes_out": "12345687",
+          "dest_port": "443",
+          "src_port": "80",
+          "host": "server1.acme.com",
+          "logsource": "logfile"
+        }
+      },
+      {
+        "_index": ".ds-ds-foo5-000001",
+        "_type": "_doc",
+        "_id": "k_mhiHsBrZmBYUuvn6bs",
+        "_score": 1,
+        "_source": {
+          "epoch": "1630034855",
+          "bytes": "60289587",
+          "bytes_in": "23489587",
+          "bytes_out": "12345687",
+          "dest_port": "443",
+          "src_port": "81",
+          "host": "server2.acme.com",
+          "logsource": "logfile"
+        }
+      },
+      {
+        "_index": ".ds-ds-foo5-000001",
+        "_type": "_doc",
+        "_id": "l_miiHsBrZmBYUuvA6bx",
+        "_score": 1,
+        "_source": {
+          "epoch": "1630044855",
+          "bytes": "60289587",
+          "bytes_in": "2389587",
+          "bytes_out": "92345687",
+          "dest_port": "449",
+          "src_port": "81",
+          "host": "server2.acme.com",
+          "logsource": "logfile"
+        }
+      },
+      {
+        "_index": ".ds-ds-foo5-000001",
+        "_type": "_doc",
+        "_id": "m_miiHsBrZmBYUuvh6aa",
+        "_score": 1,
+        "_source": {
+          "epoch": "1630014855",
+          "bytes": "60289587",
+          "bytes_in": "2389587",
+          "bytes_out": "92345687",
+          "dest_port": "46",
+          "src_port": "82",
+          "host": "server2.acme.com",
+          "logsource": "logfile"
+        }
+      }
+    ]
+  }
 }
-},{"_index":".ds-ds-foo5-000001","_type":"_doc","_id":"k_mhiHsBrZmBYUuvn6bs","_score":1.0,"_source":{
-"epoch" : "1630034855",
-"bytes" : "60289587",
-"bytes_in" : "23489587",
-"bytes_out" : "12345687",
-"dest_port" : "443",
-"src_port" : "81",
-"host" : "server2.acme.com",
-"logsource" : "logfile"
-}
-},{"_index":".ds-ds-foo5-000001","_type":"_doc","_id":"l_miiHsBrZmBYUuvA6bx","_score":1.0,"_source":{
-"epoch" : "1630044855",
-"bytes" : "60289587",
-"bytes_in" : "2389587",
-"bytes_out" : "92345687",
-"dest_port" : "449",
-"src_port" : "81",
-"host" : "server2.acme.com",
-"logsource" : "logfile"
-}
-},{"_index":".ds-ds-foo5-000001","_type":"_doc","_id":"m_miiHsBrZmBYUuvh6aa","_score":1.0,"_source":{
-"epoch" : "1630014855",
-"bytes" : "60289587",
-"bytes_in" : "2389587",
-"bytes_out" : "92345687",
-"dest_port" : "46",
-"src_port" : "82",
-"host" : "server2.acme.com",
-"logsource" : "logfile"
-}
-}]}}

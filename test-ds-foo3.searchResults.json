@@ -1,13 +1,43 @@
-{"took":1,"timed_out":false,"_shards":{"total":1,"successful":1,"skipped":0,"failed":0},"hits":{"total":{"value":2,"relation":"eq"},"max_score":1.0,"hits":[{"_index":".ds-ds-foo3-000001","_type":"_doc","_id":"hvbKfXsBrZmBYUuvwStm","_score":1.0,"_source":{
-  "@timestamp": "2021-08-23T16:02:15.000Z",
-  "makethis": "work",
-  "yousaid": "it works in the docs",
-  "cluster_uuid": "fo345345322"
+{
+  "took": 1,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 2,
+      "relation": "eq"
+    },
+    "max_score": 1,
+    "hits": [
+      {
+        "_index": ".ds-ds-foo3-000001",
+        "_type": "_doc",
+        "_id": "hvbKfXsBrZmBYUuvwStm",
+        "_score": 1,
+        "_source": {
+          "@timestamp": "2021-08-23T16:02:15.000Z",
+          "makethis": "work",
+          "yousaid": "it works in the docs",
+          "cluster_uuid": "fo345345322"
+        }
+      },
+      {
+        "_index": ".ds-ds-foo3-000001",
+        "_type": "_doc",
+        "_id": "ffnRh3sBrZmBYUuvH6MF",
+        "_score": 1,
+        "_source": {
+          "@timestamp": "2021-08-23T16:02:15.000Z",
+          "bytes": "2345",
+          "bytes_in": "456546",
+          "cluster_uuid": "fo345345322"
+        }
+      }
+    ]
+  }
 }
-},{"_index":".ds-ds-foo3-000001","_type":"_doc","_id":"ffnRh3sBrZmBYUuvH6MF","_score":1.0,"_source":{
-  "@timestamp": "2021-08-23T16:02:15.000Z",
-  "bytes": "2345",
-  "bytes_in": "456546",
-  "cluster_uuid": "fo345345322"
-}
-}]}}
