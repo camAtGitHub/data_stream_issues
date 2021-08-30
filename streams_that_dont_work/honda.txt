@@ -1,0 +1,125 @@
+# Success
+POST /_index_template/template-honda
+{
+  "index_patterns": [
+    ".ds-honda*", "honda*"
+  ],
+  "priority": 100,
+  "data_stream": {
+    "timestamp_field": {
+      "name": "@timestamp"
+    }
+  },
+  "template": {
+    "aliases": {
+      "honda": {}
+    },
+    "settings": {
+      "index": {
+        "codec": "best_compression",
+        "refresh_interval": "3s",
+        "number_of_replicas": "4",
+        "number_of_shards": "4",
+        "format": "7"
+      }
+    },
+    "mappings": {
+      "dynamic": false,
+      "properties": {
+        "timestamp": {
+          "format": "strict_date_hour_minute_second_fraction||strict_date_hour_minute_second||epoch_second||epoch_millis",
+          "type": "date"
+        }
+      }
+    }
+  }
+}
+
+
+PUT /_data_stream/honda-2021
+
+GET _cat/aliases?v&s=alias
+
+
+POST honda/_doc
+{
+    "bytes" : "13907857",
+    "bytes_in" : "20456137",
+    "bytes_out" : "20484777",
+    "dest_port" : "443",
+    "host" : "server3.acme.com",
+    "logsource" : "logfile",
+    "@timestamp" : "2021-08-05T15:33:36.0123Z"
+}
+
+POST honda/_doc
+{
+    "bytes" : "137857",
+    "bytes_in" : "20137",
+    "bytes_out" : "20777",
+    "dest_port" : "443",
+    "host" : "server4.acme.com",
+    "logsource" : "logfile",
+    "@timestamp" : "2021-08-05T15:16:37.0123Z"
+}
+
+
+POST honda/_doc
+{
+    "bytes" : "13733857",
+    "bytes_in" : "2031137",
+    "bytes_out" : "2074377",
+    "dest_port" : "443",
+    "host" : "server5.acme.com",
+    "logsource" : "logfile",
+    "@timestamp" : "2021-08-05T15:17:35.0123Z"
+}
+# Why is this zero for all fields
+GET _data_stream/honda/_stats
+
+GET _data_stream/honda-2021/_stats
+
+
+PUT /_data_stream/honda
+
+# This doesnt work - no such index or alias error
+POST _aliases
+{
+  "actions": [
+    {
+      "add": {
+        "index": "honda-2021",
+        "alias": "cars",
+        "is_write_index": true
+      }
+    }
+  ]
+}
+
+# Error The provided expression [honda] matches an alias, specify the corresponding concrete indices instead
+POST _aliases
+{
+  "actions": [
+    {
+      "add": {
+        "index": "honda",
+        "alias": "cars",
+        "is_write_index": true
+      }
+    }
+  ]
+}
+
+# Error The provided expressions [.ds-honda-2021-000001] match a backing index belonging to data stream [honda-2021]. Data streams and their backing indices don't support aliases
+POST _aliases
+{
+  "actions": [
+    {
+      "add": {
+        "index": ".ds-honda-2021-000001",
+        "alias": "cars",
+        "is_write_index": true
+      }
+    }
+  ]
+}

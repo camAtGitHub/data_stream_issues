@@ -1,0 +1,115 @@
+# Success
+PUT /_index_template/tomato-template
+{
+  "index_patterns": [ "tomato*" ],
+  "data_stream": {
+        "name": "timestamp"
+  },
+  "priority": 200,
+  "template": {
+    "mappings": {
+      "properties": {
+        "@timestamp": {
+          "type": "date_nanos"
+        }
+      }
+    },
+    "settings": {
+      "sort.field": [ "@timestamp"],
+      "sort.order": [ "desc"]
+    }
+  }
+}
+
+
+PUT /_data_stream/tomato-2021
+GET _data_stream/tomato-2021/_stats
+
+GET _cat/aliases?v&s=alias
+GET tomato-2021/_search
+
+POST tomato-2021/_doc
+{
+    "bytes" : "13907857",
+    "bytes_in" : "20456137",
+    "bytes_out" : "20484777",
+    "dest_port" : "443",
+    "host" : "server1.acme.com",
+    "logsource" : "logfile",
+    "@timestamp" : "1630309649708"
+}
+
+POST tomato-2021/_doc
+{
+    "bytes" : "137857",
+    "bytes_in" : "20137",
+    "bytes_out" : "20777",
+    "dest_port" : "443",
+    "host" : "server2.acme.com",
+    "logsource" : "logfile",
+    "@timestamp" : "1630309659708"
+}
+
+
+POST tomato-2021/_doc
+{
+    "bytes" : "13733857",
+    "bytes_in" : "2031137",
+    "bytes_out" : "2074377",
+    "dest_port" : "443",
+    "host" : "server3.acme.com",
+    "logsource" : "logfile",
+    "@timestamp" : "1630309669708"
+}
+# Why is this zero for all fields
+GET _data_stream/tomato-2021/_stats
+GET _cat/aliases?v&s=alias
+GET tomato-2021/_search
+# Create (force) index-patterns in UI but no timestamp
+POST /tomato-2021/_rollover/
+
+POST tomato-2021/_doc
+{
+    "bytes" : "13907857",
+    "bytes_in" : "20456137",
+    "bytes_out" : "20484777",
+    "dest_port" : "443",
+    "host" : "server4.acme.com",
+    "logsource" : "logfile",
+    "@timestamp" : "2021-08-05T16:33:36.0123Z"
+}
+
+POST tomato-2021/_doc
+{
+    "bytes" : "137857",
+    "bytes_in" : "20137",
+    "bytes_out" : "20777",
+    "dest_port" : "443",
+    "host" : "server5.acme.com",
+    "logsource" : "logfile",
+    "@timestamp" : "2021-08-05T16:16:37.0123Z"
+}
+
+
+POST tomato-2021/_doc
+{
+    "bytes" : "13733857",
+    "bytes_in" : "2031137",
+    "bytes_out" : "2074377",
+    "dest_port" : "443",
+    "host" : "server6.acme.com",
+    "logsource" : "logfile",
+    "@timestamp" : "2021-08-05T16:17:35.0123Z"
+}
+
+# Why is a incomplete date allowed?
+POST tomato-2021/_doc
+{
+    "bytes" : "13733857",
+    "bytes_in" : "2031137",
+    "bytes_out" : "2074377",
+    "dest_port" : "443",
+    "host" : "server7.acme.com",
+    "logsource" : "logfile",
+    "@timestamp" : "2021"
+}

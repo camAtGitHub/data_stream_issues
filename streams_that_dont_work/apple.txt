@@ -1,0 +1,103 @@
+POST /_index_template/apple-template
+{
+  "index_patterns": [ "apple*" ],
+  "priority": 100,
+  "data_stream": { "timestamp_field": { "name": "epoch" } },
+  "template": {
+    "settings": {
+      "index": {
+        "codec": "best_compression",
+        "refresh_interval": "3s",
+        "number_of_replicas": "4",
+        "number_of_shards": "4"
+      },
+      "format": "7"
+    },
+    "mappings": {
+      "dynamic": "strict",
+      "properties": {
+        "epoch": {
+          "format": "strict_date_hour_minute_second_fraction||strict_date_hour_minute_second||epoch_second||epoch_millis",
+          "type": "date_nanos"
+        },
+        "message": {
+          "type": "text"
+        }
+      }
+    }
+  }
+}
+
+
+
+PUT /_data_stream/apple-2021
+GET _data_stream/apple-2021/_stats
+
+GET _cat/aliases?v&s=alias
+GET apple-2021/_search
+
+POST apple-2021/_doc
+{
+    "message" : "epoch1.acme.com",
+    "epoch" : "1630309484"
+}
+
+POST apple-2021/_doc
+{
+    "message" : "nano_ms.acme.com",
+    "epoch" : "1630309649708"
+}
+
+
+POST apple-2021/_doc
+{
+    "message" : "server3.acme.com",
+    "epoch" : "1630309485"
+}
+
+POST apple-2021/_doc
+{
+    "message" : "server4.acme.com",
+    "epoch" : "1630309486"
+}
+
+POST /_index_template/apple-template
+{
+  "index_patterns": [ "apple*" ],
+  "priority": 100,
+  "data_stream": { "timestamp_field": { "name": "epoch" } },
+  "template": {
+    "settings": {
+      "index": {
+        "codec": "best_compression",
+        "refresh_interval": "3s",
+        "number_of_replicas": "4",
+        "number_of_shards": "4"
+      },
+      "format": "7"
+    },
+    "mappings": {
+      "dynamic": "strict",
+      "properties": {
+        "epoch": {
+          "format": "epoch_millis",
+          "type": "date_nanos"
+        },
+        "message": {
+          "type": "text"
+        }
+      }
+    }
+  }
+}
+
+POST apple-2021/_rollover
+
+# Why is this allowed?
+POST apple-2021/_doc
+{
+    "message" : "server4.acme.com",
+    "epoch" : "1630309486"
+}
+
+

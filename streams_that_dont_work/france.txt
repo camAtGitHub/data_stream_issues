@@ -1,0 +1,82 @@
+POST /_index_template/france-template
+{
+  "index_patterns": [
+    "france*"
+  ],
+  "priority": 100,
+  "data_stream": {
+    "timestamp_field": {
+      "name": "epoch"
+    }
+  },
+  "template": {
+    "settings": {
+      "index": {
+        "codec": "best_compression",
+        "refresh_interval": "3s",
+        "number_of_replicas": "4",
+        "number_of_shards": "4"
+      }
+    },
+    "mappings": {
+      "dynamic": "strict",
+      "properties": {
+        "epoch": {
+          "format": "epoch_millis",
+          "type": "date_nanos"
+        },
+        "_source": {
+          "type": "_source"
+        },
+        "_id": {
+          "type": "text"
+        },
+        "_index": {
+          "type": "text"
+        },
+        "_type": {
+          "type": "text"
+        },
+        "message": {
+          "analyzer": "simple",
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+PUT /_data_stream/france-2021
+GET _data_stream/france-2021/_stats
+
+GET _cat/aliases?v&s=alias
+GET france-2021/_search
+
+POST france-2021/_doc
+{
+    "message" : "epoch1.acme.com",
+    "epoch" : "1630309484"
+}
+
+POST france-2021/_doc
+{
+    "message" : "nano_ms.acme.com",
+    "epoch" : "1630309649708"
+}
+
+
+POST france-2021/_doc
+{
+    "message" : "server3.acme.com",
+    "epoch" : "1630309485"
+}
+
+POST france-2021/_doc
+{
+    "message" : "server4.acme.com",
+    "epoch" : "1630309486"
+}

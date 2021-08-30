@@ -1,0 +1,126 @@
+# Success
+POST /_index_template/template-toyota
+{
+  "index_patterns": [
+    "toyota*"
+  ],
+  "priority": 100,
+  "data_stream": {
+    "timestamp_field": {
+      "name": "@timestamp"
+    }
+  },
+  "template": {
+    "settings": {
+      "index": {
+        "codec": "best_compression",
+        "refresh_interval": "3s",
+        "number_of_replicas": "4",
+        "number_of_shards": "4"
+      },
+      "format": "7"
+    },
+    "mappings": {
+      "dynamic": false,
+      "properties": {
+        "timestamp": {
+          "format": "strict_date_hour_minute_second_fraction||strict_date_hour_minute_second||epoch_second||epoch_millis",
+          "type": "date"
+        }
+      }
+    }
+  }
+}
+
+
+PUT /_data_stream/toyota-2021
+GET _data_stream/toyota-2021/_stats
+
+GET _cat/aliases?v&s=alias
+GET toyota-2021/_search
+
+POST toyota-2021/_doc
+{
+    "bytes" : "13907857",
+    "bytes_in" : "20456137",
+    "bytes_out" : "20484777",
+    "dest_port" : "443",
+    "host" : "server1.acme.com",
+    "logsource" : "logfile",
+    "@timestamp" : "2021-08-05T15:33:36.0123Z"
+}
+
+POST toyota-2021/_doc
+{
+    "bytes" : "137857",
+    "bytes_in" : "20137",
+    "bytes_out" : "20777",
+    "dest_port" : "443",
+    "host" : "server2.acme.com",
+    "logsource" : "logfile",
+    "@timestamp" : "2021-08-05T15:16:37.0123Z"
+}
+
+
+POST toyota-2021/_doc
+{
+    "bytes" : "13733857",
+    "bytes_in" : "2031137",
+    "bytes_out" : "2074377",
+    "dest_port" : "443",
+    "host" : "server3.acme.com",
+    "logsource" : "logfile",
+    "@timestamp" : "2021-08-05T15:17:35.0123Z"
+}
+# Why is this zero for all fields
+GET _data_stream/toyota-2021/_stats
+GET _cat/aliases?v&s=alias
+GET toyota-2021/_search
+# Create (force) index-patterns in UI but no timestamp
+POST /toyota-2021/_rollover/
+
+POST toyota-2021/_doc
+{
+    "bytes" : "13907857",
+    "bytes_in" : "20456137",
+    "bytes_out" : "20484777",
+    "dest_port" : "443",
+    "host" : "server4.acme.com",
+    "logsource" : "logfile",
+    "@timestamp" : "2021-08-05T16:33:36.0123Z"
+}
+
+POST toyota-2021/_doc
+{
+    "bytes" : "137857",
+    "bytes_in" : "20137",
+    "bytes_out" : "20777",
+    "dest_port" : "443",
+    "host" : "server5.acme.com",
+    "logsource" : "logfile",
+    "@timestamp" : "2021-08-05T16:16:37.0123Z"
+}
+
+
+POST toyota-2021/_doc
+{
+    "bytes" : "13733857",
+    "bytes_in" : "2031137",
+    "bytes_out" : "2074377",
+    "dest_port" : "443",
+    "host" : "server6.acme.com",
+    "logsource" : "logfile",
+    "@timestamp" : "2021-08-05T16:17:35.0123Z"
+}
+
+# Why is a incomplete date allowed?
+POST toyota-2021/_doc
+{
+    "bytes" : "13733857",
+    "bytes_in" : "2031137",
+    "bytes_out" : "2074377",
+    "dest_port" : "443",
+    "host" : "server7.acme.com",
+    "logsource" : "logfile",
+    "@timestamp" : "2021"
+}

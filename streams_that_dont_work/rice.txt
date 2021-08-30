@@ -1,0 +1,70 @@
+POST /_index_template/rice-template
+{
+  "index_patterns": [ "rice*" ],
+  "priority": 100,
+  "data_stream": { "timestamp_field": { "name": "epoch" } },
+  "template": {
+    "settings": {
+      "index": {
+        "codec": "best_compression",
+        "refresh_interval": "3s",
+        "number_of_replicas": "4",
+        "number_of_shards": "4"
+      },
+      "format": "7"
+    },
+    "mappings": {
+      "dynamic": "strict",
+      "properties": {
+        "epoch": {
+          "format": "strict_date_hour_minute_second_fraction||strict_date_hour_minute_second||epoch_second||epoch_millis",
+          "type": "date"
+        },
+        "message": {
+          "type": "text"
+        }
+      }
+    }
+  }
+}
+
+
+
+PUT /_data_stream/rice-2021
+GET _data_stream/rice-2021/_stats
+
+GET _cat/aliases?v&s=alias
+GET rice-2021/_search
+
+POST rice-2021/_doc
+{
+    "message" : "server1.acme.com",
+    "@timestamp" : "1630309649708",
+    "epoch" : "1630309649708"
+}
+
+POST rice-2021/_doc
+{
+    "message" : "server2.acme.com",
+    "epoch" : "1630309659708"
+}
+
+# Why is this allowed?
+POST rice-2021/_doc
+{
+    "message" : "server3.acme.com",
+    "epoch" : "2021"
+}
+# Why is this allowed?
+POST rice-2021/_doc
+{
+    "message" : "server4.acme.com",
+    "epoch" : "20216"
+}
+
+# Why is this zero for all fields
+GET _data_stream/rice-2021/_stats
+GET _cat/aliases?v&s=alias
+GET rice-2021/_search
+# Create (force) index-patterns in UI but no timestamp
+
